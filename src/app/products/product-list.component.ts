@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
     pageTitle: string = 'Product List';
+    imageWidth: number = 50;
+    imageMargin = 2; //need not mention data type as we have typscript inference
+    showImage: boolean = false;
+    listFilter: string = 'cart';
     products: any[] = [
         {
             "productId": 2,
@@ -28,4 +32,9 @@ export class ProductListComponent {
             "imageUrl": "assets/images/hammer.png"
         }
     ];
+
+    toggleImage(): void {
+          // ! -> Not operator
+        this.showImage = !this.showImage;
+    };
 }
